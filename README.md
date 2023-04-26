@@ -8,6 +8,7 @@ Let's create an AI Art Generator using [OpenAI's DALL·E 2](https://openai.com/p
 
 ## Outline <!-- omit in toc -->
 * [Completed Project](#completed-project)
+* [Original Project](#original-project)
 * [Get Started](#get-started)
 * [Get Your Free Kintone Database](#get-your-free-kintone-database)
 * [Workshop Steps](#workshop-steps)
@@ -23,8 +24,19 @@ Let's create an AI Art Generator using [OpenAI's DALL·E 2](https://openai.com/p
 * [Completed Code](#completed-code)
 * [Overview of the Repo](#overview-of-the-repo)
 
-
 ## Completed Project
+
+![project-overview.png](./outputs/project-overview.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/gabrieIbarboza/ai-kintone-gallery/coding-session/outputs/cat-flowers.png" width="100" title="Cat holding flowers" alt="Cat holding flowers"/>
+  <img src="https://raw.githubusercontent.com/gabrieIbarboza/ai-kintone-gallery/coding-session/outputs/fox-cottoncandy.png" width="100" title="Fox holding contton candy" alt="Fox holding contton candy"/>
+  <img src="https://raw.githubusercontent.com/gabrieIbarboza/ai-kintone-gallery/coding-session/outputs/turtle-straw.png" width="100" title="Angry tutle holding a straw" alt="Angry tutle holding a straw"/>
+  <img src="https://raw.githubusercontent.com/gabrieIbarboza/ai-kintone-gallery/coding-session/outputs/wolf-laptop.png" width="100" title="Wolf with a laptop" alt="Wolf with a laptop"/>
+  <img src="https://raw.githubusercontent.com/gabrieIbarboza/ai-kintone-gallery/coding-session/outputs/fox-flowers.png" width="100" title="Fox holding flowers" alt="Fox holding flowers"/>
+</p>
+
+## Original Project
 
 ![Kintone_OpenAI_ImageGenerator_Demo.gif](./docs/img/Kintone_OpenAI_ImageGenerator_Demo.gif)
 
