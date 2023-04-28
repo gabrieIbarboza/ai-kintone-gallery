@@ -16,11 +16,15 @@ Let's create an AI Art Generator using [OpenAI's DALL·E 2](https://openai.com/p
   * [What is DALL-E?](#what-is-dall-e)
   * [What is DALL-E?](#what-is-dall-e-1)
 * [Debugging](#debugging)
+  * [Errors related to OpenAI API Keys](#errors-related-to-openai-api-keys)
   * [Errors related to .env](#errors-related-to-env)
   * [Errors related to kintone-customize-uploader](#errors-related-to-kintone-customize-uploader)
+  * [Error when trying to install kintone-customize-uploader](#error-when-trying-to-install-kintone-customize-uploader)
+  * [Errors related to Node.js \& npm](#errors-related-to-nodejs--npm)
   * [`npm install` command is not working](#npm-install-command-is-not-working)
   * [`npm run upload` failed?](#npm-run-upload-failed)
   * [Not seeing a highlighted `TODO:`?](#not-seeing-a-highlighted-todo)
+  * [Errors related to kintone-customize-uploader](#errors-related-to-kintone-customize-uploader-1)
 * [Completed Code](#completed-code)
 * [Overview of the Repo](#overview-of-the-repo)
 
@@ -127,6 +131,22 @@ Pricing is per image and varies by resolution:
 
 Here is a rundown of common problems that may occur & their solutions!
 
+### Errors related to OpenAI API Keys
+
+Are you not getting any images even though you have a `.env` file with your OpenAI API Key?
+
+Open console and check for the following error message:
+`openai.error.RateLimitError: you exceeded your current quota, please check your plan and billing details`
+
+If you get this error message, then you have exceeded your free trial credits.  
+You will need to upgrade to a paid plan to continue using the API.
+
+Check your OpenAI API usage here:  
+<https://platform.openai.com/account/usage>
+
+⚠️ Note: OpenAI only gives you free credits for the first account associated with your phone number.  
+Subsequent accounts are not granted free credits.
+
 ### Errors related to .env
 
 If you get one of the following error messages:  
@@ -165,6 +185,49 @@ Solution:
 npm install -g kintone-customize-uploader
 ```
 
+### Error when trying to install kintone-customize-uploader
+
+Error:  
+* `npm ERR! code EACCES`
+* `npm ERR! syscall mkdir`
+* `npm ERR! path /usr/local/lib/node_modules/@kintone`
+* `npm ERR! errno -13`
+* `npm ERR! Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/@kintone'`
+
+Solution:
+
+```shell
+sudo npm install -g kintone-customize-uploader
+```
+
+### Errors related to Node.js & npm
+
+Error Message:
+
+```shell
+vite build --emptyOutDir
+
+internal/process/esm_loader.js:74
+    internalBinding('errors').triggerUncaughtException(
+                              ^
+
+Error [ERR_UNSUPPORTED_ESM_URL_SCHEME]: Only file and data URLs are supported by the default ESM loader. Received protocol 'node:'
+    at Loader.defaultResolve [as _resolve] (internal/modules/esm/resolve.js:782:11)
+    at Loader.resolve (internal/modules/esm/loader.js:85:40)
+    at Loader.getModuleJob (internal/modules/esm/loader.js:229:28)
+    at ModuleWrap.<anonymous> (internal/modules/esm/module_job.js:51:40)
+    at link (internal/modules/esm/module_job.js:50:36) {
+  code: 'ERR_UNSUPPORTED_ESM_URL_SCHEME'
+}
+```
+
+Solution:
+
+```shell
+cd ai-kintone-gallery
+npm install
+```
+
 ### `npm install` command is not working
 
 1. Verify the Node.js & npm versions **inside** the `ai-kintone-gallery` folder
@@ -197,6 +260,19 @@ _@kintone/customize-uploader not working?_ Let's try the following:
 ### Not seeing a highlighted `TODO:`?
 Click the `Install` button on the VS Code pop-up message to install [TODO Highlight extension](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight).
 * [![vscode-setting-extension.png](./docs/img/vscode-setting-extension.png)](./docs/img/vscode-setting-extension-HD.png)  
+
+### Errors related to kintone-customize-uploader
+
+If you get the following error, the Kintone account you are using to upload the code is not a Kintone Administrator.
+
+Error Message:  
+`KintoneRestAPIError: [403] [CB_NO02] No privilege to proceed. (YvIvLH6UrE8kqnRjT7Va)`
+
+Solution:  
+Use a Kintone account that has Kintone Administrator privileges. Only Kintone Administrators can upload code to Kintone, regardless of the permissions set for the App.
+
+Steps:  
+[Kintone-customize-uploader - KintoneRestAPIError: [403] [CB_NO02] No privilege to proceed. Error](https://forum.kintone.dev/t/kintone-customize-uploader-kintonerestapierror-403-cb-no02-no-privilege-to-proceed-error/766)
 
 ---
 
